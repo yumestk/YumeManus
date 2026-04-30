@@ -4,6 +4,8 @@ import com.yume.yumeaiagent.rag.LoveAppDocumentLoader;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.ai.mcp.client.autoconfigure.McpClientAutoConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.UUID;
@@ -76,6 +78,19 @@ class LoveAppTest {
     private void testMessage(String message) {
         String chatId = UUID.randomUUID().toString();
         String answer = loveApp.doChatWithTools(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
+    @Test
+    void doChatWithMcp() {
+        String chatId = UUID.randomUUID().toString();
+        // 测试地图 MCP
+//        String message = "我的另一半居住在上海静安区，请帮我找到 5 公里内合适的约会地点";
+//        String answer =  loveApp.doChatWithMcp(message, chatId);
+//        Assertions.assertNotNull(answer);
+        // 测试图片搜索
+        String message = "搜两张狗狗图片";
+        String answer =  loveApp.doChatWithMcp(message, chatId);
         Assertions.assertNotNull(answer);
     }
 

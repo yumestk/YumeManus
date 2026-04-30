@@ -14,6 +14,14 @@ spring:
       chat:
         model: gemma3:1b
         enabled: false
+    mcp:
+      client:
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8127
+#        stdio:
+#          servers-configuration: classpath:mcp-servers.json
   datasource:
     url: jdbc:postgresql://改为你的公网地址/yu_ai_agent
     username: 改为你的用户名
@@ -50,3 +58,6 @@ knife4j:
 # searchApi
 search-api:
   api-key: qMDnkH2B1141PyKhsVYwsLZ6
+logging:
+  level:
+    org.springframework.ai: DEBUG
