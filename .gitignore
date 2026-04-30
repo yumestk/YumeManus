@@ -1,8 +1,9 @@
 ### CUSTOM ###
-application.yml
+application-local.yml
 tmp
 mcp-servers.json
 nul
+application-prod.yml
 
 HELP.md
 target/
