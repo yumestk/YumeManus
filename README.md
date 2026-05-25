@@ -99,6 +99,8 @@ flowchart LR
     MCP --> MCPSVC[External MCP Servers]
 ```
 
+
+
 > 更详细的架构权衡、时序与模块关系见 [ARCHITECTURE.md](./ARCHITECTURE.md)。
 
 ## 4. 项目结构
@@ -132,16 +134,18 @@ flowchart LR
 
 ## 5. 技术选型与理由
 
-| 领域 | 选型 | 理由 |
-| --- | --- | --- |
-| Web 框架 | Spring Boot 3 | Java 生态成熟，配置与工程化能力完善 |
-| AI 框架 | Spring AI | 统一抽象 ChatModel / Tool / Advisor / RAG / MCP |
-| 模型层 | DashScope + Ollama(可选) | 云端快速落地，本地方案便于实验 |
-| Agent 模式 | ReAct + Tool Calling | 支持“规划-执行-回写”闭环 |
-| RAG | 向量检索增强 | 降低幻觉，提升垂直场景答复准确率 |
-| 向量库 | SimpleVectorStore / PGVector | 本地轻量、线上可持久化升级 |
-| 协议扩展 | MCP | 工具服务化、解耦主应用、动态加载能力 |
-| 前端 | Vue3 + Vite | 快速实现对话 UI 与流式体验 |
+
+| 领域       | 选型                           | 理由                                          |
+| -------- | ---------------------------- | ------------------------------------------- |
+| Web 框架   | Spring Boot 3                | Java 生态成熟，配置与工程化能力完善                        |
+| AI 框架    | Spring AI                    | 统一抽象 ChatModel / Tool / Advisor / RAG / MCP |
+| 模型层      | DashScope + Ollama(可选)       | 云端快速落地，本地方案便于实验                             |
+| Agent 模式 | ReAct + Tool Calling         | 支持“规划-执行-回写”闭环                              |
+| RAG      | 向量检索增强                       | 降低幻觉，提升垂直场景答复准确率                            |
+| 向量库      | SimpleVectorStore / PGVector | 本地轻量、线上可持久化升级                               |
+| 协议扩展     | MCP                          | 工具服务化、解耦主应用、动态加载能力                          |
+| 前端       | Vue3 + Vite                  | 快速实现对话 UI 与流式体验                             |
+
 
 ### 为什么选 Spring AI？
 
@@ -277,8 +281,8 @@ curl "http://localhost:8124/api/ai/love_app/chat/sync?message=我最近总是患
 
 ## 11. 扩展文档
 
-- 架构详解：[`ARCHITECTURE.md`](./ARCHITECTURE.md)
-- 模块清单：[`MODULES.md`](./MODULES.md)
+- 架构详解：`[ARCHITECTURE.md](./ARCHITECTURE.md)`
+- 模块清单：`[MODULES.md](./MODULES.md)`
 
 ## License
 

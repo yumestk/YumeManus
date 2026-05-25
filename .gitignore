@@ -4,6 +4,8 @@ tmp
 mcp-servers.json
 nul
 application-prod.yml
+项目面试讲述思路文档.md
+
 
 HELP.md
 target/
@@ -38,3 +40,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/README.md

@@ -8,6 +8,7 @@ import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.print.Doc;
 import java.util.List;
@@ -25,6 +26,7 @@ public class LoveAppVectorStoreConfig {
     private MyKeywordEnricher myKeywordEnricher;
 
     @Bean
+    @Primary
     VectorStore loveAppVector(EmbeddingModel dashscopeEmbeddingModel) {
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(dashscopeEmbeddingModel)
                 .build();

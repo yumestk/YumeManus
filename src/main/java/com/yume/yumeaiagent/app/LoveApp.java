@@ -20,6 +20,7 @@ import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
@@ -197,7 +198,6 @@ public class LoveApp {
     }
 
     // AI 调用MCP服务
-    @Resource
     private ToolCallbackProvider toolCallbackProvider;
 
     /**
